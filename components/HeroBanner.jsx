@@ -1,9 +1,9 @@
-import React, {useEffect, useState} from 'react'
-import Link from 'next/link'
+import React, { useState } from 'react'
 import { urlFor } from '../lib/client'
 import { useStateContext } from '../context/StateContext'
 import { AiOutlineArrowLeft, AiOutlineArrowRight } from 'react-icons/ai'
 import { motion, AnimatePresence } from 'framer-motion'
+import Image from 'next/image'
 
 const HeroBanner = ({ products }) => {
     const {qty, onAdd, setShowCart} = useStateContext();
@@ -95,10 +95,12 @@ const HeroBanner = ({ products }) => {
                         </button>
                     </div>
                 </div>
-                <img 
-                    src={urlFor(products[num].image[0])}
-                    alt="headphones"
+                <Image
+                    src={urlFor(products[num].image[0]).url()}
+                    alt="item-image"
                     className='hero-banner-image'
+                    width={250}
+                    height={250}
                 />
             </div>
         </motion.div>

@@ -1,5 +1,6 @@
+'use client';
+
 import React, {useRef} from 'react'
-import Link from 'next/link'
 import { AiOutlineMinus, AiOutlinePlus, AiOutlineLeft, AiOutlineShopping } from 'react-icons/ai'
 
 import {TiDeleteOutline} from 'react-icons/ti'
@@ -9,10 +10,11 @@ import { useStateContext } from '../context/StateContext'
 import { urlFor } from '../lib/client'
 import getStripe from '../lib/getStripe'
 import { motion } from 'framer-motion'
+import Image from 'next/image'
 
 const Cart = () => {
   const cartRef = useRef()
-  const { totalPrice, totalQuantity, cartItems, setShowCart, toggleCartItemQuantity, onRemove, showCart, userData } = useStateContext()
+  const { totalPrice, totalQuantity, cartItems, setShowCart, toggleCartItemQuantity, onRemove, showCart, userData, getFromStorage } = useStateContext()
   
   const handleCheckout = async () => {
     if(userData != undefined) {
@@ -84,7 +86,7 @@ const Cart = () => {
           {cartItems.length >= 1 && cartItems.map((item)=> 
           (
             <div className='product' key={item?.image[0]} >
-              <img src={urlFor(item?.image[0])} className='cart-product-image'/>
+              <Image width={250} height={250} alt="product-image" src={urlFor(item?.image[0]).url()} className='cart-product-image'/>
               <div className='items-desc'>
                 <div className='flex top'>
                   <h5>{item?.name}</h5>

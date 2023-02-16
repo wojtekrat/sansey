@@ -1,19 +1,11 @@
 import React, { useState } from 'react'
-import Link from 'next/link'
-
-import { urlFor } from '../lib/client'
 import { useStateContext } from '../context/StateContext'
 import Category from './Category'
 import SaleProduct from './SaleProduct'
 
 const FooterBanner = ({ products } ) => {
-  const {qty, onAdd, setShowCart, categories} = useStateContext();
+  const {categories} = useStateContext();
   const [active, setActive] = useState('WOMEN')
-
-  const handleBuyNow = () => {
-    onAdd(products, qty)
-    setShowCart(true)
-  }
 
   return (
     <div className='footer-banner-container'>
