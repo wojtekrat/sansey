@@ -10,10 +10,8 @@ const Product = ({ product: { image, name, slug, price }}) => {
     <div>
       <Link href={`/product/${slug.current}`}>
         <div className='product-card'>
-          <Image 
-            src={urlFor(image && image[0]).url()}
-            width={250}
-            height={250}
+          <img 
+            src={urlFor(image && image[0])}
             className="product-image"
             alt="product-image"
           />

@@ -99,8 +99,6 @@ const HeroBanner = ({ products }) => {
                     src={urlFor(products[num].image[0])}
                     alt="item-image"
                     className='hero-banner-image'
-                    width={250}
-                    height={250}
                 />
             </div>
         </motion.div>

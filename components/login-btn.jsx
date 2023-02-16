@@ -30,7 +30,7 @@ const LoginBtn = () => {
     return (
       <>
         <Link href={`/profiles/${profile.token.sub}`}>
-          <Image className='loginBtn-picture' src={session?.user.image} width={50} height={50} alt="profile" referrerPolicy="no-referrer"/>
+          <img className='loginBtn-picture' src={session?.user.image} alt="profile" referrerPolicy="no-referrer"/>
         </Link>
       </>
     )

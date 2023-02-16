@@ -44,7 +44,7 @@ const Profile = ({user}) => {
       <div className='profile-inner-container'>
         <div className='profile-info'>
           <div className='profile-image'>
-            <Image width={50} height={50} src={session?.user.image} alt='profile image'/>
+            <img src={session?.user.image} alt='profile image'/>
           </div>
           <div className='profile-data'>
             <p><span>Your name:</span> {user?.name}</p>

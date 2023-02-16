@@ -86,7 +86,7 @@ const Cart = () => {
           {cartItems.length >= 1 && cartItems.map((item)=> 
           (
             <div className='product' key={item?.image[0]} >
-              <Image width={250} height={250} alt="product-image" src={urlFor(item?.image[0]).url()} className='cart-product-image'/>
+              <img width={250} height={250} alt="product-image" src={urlFor(item?.image[0])} className='cart-product-image'/>
               <div className='items-desc'>
                 <div className='flex top'>
                   <h5>{item?.name}</h5>
