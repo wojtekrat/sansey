@@ -95,9 +95,8 @@ const HeroBanner = ({ products }) => {
                         </button>
                     </div>
                 </div>
-                <Image
-                    src={urlFor(products[num].image[0]).url()}
-                    loader={()=>urlFor(products[num].image[0]).url()}
+                <img
+                    src={urlFor(products[num].image[0])}
                     alt="item-image"
                     className='hero-banner-image'
                     width={250}
